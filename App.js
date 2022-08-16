@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, {  useState } from "react";
 import {
   Dimensions,
   SafeAreaView,
@@ -16,7 +16,7 @@ const App = () => {
     operation: "",
     result: ""
   });
-  const providerMemoized = useMemo(() => ({value, setValue}), []);
+  
   return (
     <CalculatorContext.Provider value={{value, setValue}}>
     <SafeAreaView style={{flex: 1, width, backgroundColor:  '#1C191C'}}>
