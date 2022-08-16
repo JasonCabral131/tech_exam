@@ -143,16 +143,19 @@ const Keyboard = () => {
   };
 
   const handleConCatenate = val => {
+    
     setValue(prev => {
       if (prev.operation) {
+        const sd = (prev.secondVal.toString() + val.toString())
         return {
           ...prev,
-          secondVal: prev.secondVal == 0 ? val : (prev.secondVal += val),
+          secondVal: prev.secondVal == 0 ? prev.secondVal.length ?sd : val : sd,
         };
       }
+       const fd = (prev.firstVal.toString() + val.toString())
       return {
         ...prev,
-        firstVal: prev.firstVal == 0 ? val : (prev.firstVal += val),
+        firstVal:  prev.firstVal == 0 ? prev.firstVal.length ?fd : val : fd,
       };
     });
   };
@@ -207,6 +210,7 @@ const Keyboard = () => {
   };
   const handleDot = () => {
     setValue(prev => {
+      console.log("false")
       if (prev.operation) {
         if (!/\./.test(prev.secondVal)) {
           return {...prev, secondVal: prev.secondVal + '.'};
@@ -215,6 +219,7 @@ const Keyboard = () => {
       if (!/\./.test(prev.firstVal)) {
         return {...prev, firstVal: prev.firstVal + '.'};
       }
+    
       return {...prev};
     });
   };
