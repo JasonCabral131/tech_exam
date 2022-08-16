@@ -238,8 +238,6 @@ const Keyboard = () => {
     </View>
   );
 };
-const clear = () => {};
-const handleOperation = () => {};
 export default Keyboard;
 
 const style = StyleSheet.create({
